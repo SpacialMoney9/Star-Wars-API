@@ -9,9 +9,10 @@ const baseUrl = `http://localhost:9001/api`;
 // Runs on page load
 addEventListener('DOMContentLoaded', () => {
   nameH1 = document.querySelector('h1#name');
-//   birthYearSpan = document.querySelector('span#birth_year');
-//   massSpan = document.querySelector('span#mass');
-//   heightSpan = document.querySelector('span#height');
+  climateSpan = document.querySelector('span#climate');
+  surfaceSpan = document.querySelector('span#surface_water');
+  diameterSpan = document.querySelector('span#diameter');
+  populationSpan = document.querySelector('span#population');
 //   homeworldSpan = document.querySelector('span#homeworld');
 //   filmsUl = document.querySelector('#films>ul');
   const sp = new URLSearchParams(window.location.search)
@@ -55,9 +56,10 @@ async function fetchPlanet(id) {
 const renderPlanet = planet => {
   document.title = `SWAPI - ${planet?.name}`;  // Just to make the browser tab say their name
   nameH1.textContent = planet?.name;
-//   heightSpan.textContent = planet?.height;
-//   massSpan.textContent = planet?.mass;
-//   birthYearSpan.textContent = planet?.birth_year;
+  climateSpan.textContent = planet?.climate;
+  surfaceSpan.textContent = planet?.surface_water;
+  diameterSpan.textContent = planet?.diameter;
+  populationSpan.textContent = planet?.population;
 //   homeworldSpan.innerHTML = `<a href="/planet.html?id=${planet?.homeworld.id}">${planet?.homeworld.name}</a>`;
 //   const filmsLis = planet?.films?.map(film => `<li><a href="/film.html?id=${film.id}">${film.title}</li>`)
 //   filmsUl.innerHTML = filmsLis.join("");
